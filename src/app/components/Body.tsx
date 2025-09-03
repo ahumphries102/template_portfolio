@@ -1,7 +1,8 @@
-export default function Body({}) {
+import Image from "next/image"
+export default function Body({ bodyInfo, children }) {
   return (
-    <div>
-      <h1>Taco</h1>
-    </div>
-  );
+    <>
+      <section>{children}</section>
+    </>
+  )
 }

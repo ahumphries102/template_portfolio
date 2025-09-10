@@ -1,8 +1,14 @@
-import Image from "next/image"
-export default function Body({ bodyInfo, children }) {
+export default function Body({
+  BodyContent,
+  Hero,
+}: {
+  BodyContent: React.ReactNode
+  Hero: React.ReactNode
+}) {
   return (
     <>
-      <section>{children}</section>
+      <section>{Hero}</section>
+      <section>{BodyContent}</section>
     </>
   )
 }

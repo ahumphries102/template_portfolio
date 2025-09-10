@@ -1,5 +1,5 @@
 import Body from "@/app/components/Body"
-import Content from "@/app/components/BodyContent"
+import BodyContent from "@/app/components/BodyContent"
 import Footer from "@/app/components/Footer"
 import Header from "@/app/components/Header"
 import Navbar from "@/app/components/Navbar"
@@ -16,15 +16,11 @@ export default function Page({}) {
   return (
     <div>
       <Navbar />
-      <Body bodyInfo={bodyInformation}>
-        <Header
-          image={
-            "https://www.coravin.com/cdn/shop/articles/AdobeStock_791180394.jpg?v=1749185161"
-          }
-        />
-        <Content content={bodyInformation.story.content} />
-        <Footer />
-      </Body>
+      <Body
+        BodyContent={<BodyContent content={bodyInformation.story} />}
+        Hero={<Header image={bodyInformation.heroImage} />}
+      />
+      <Footer />
       <></>
     </div>
   )

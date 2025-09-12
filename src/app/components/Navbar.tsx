@@ -4,8 +4,8 @@ import Image from "next/image"
 const routes: string[] = ["Home", "About", "Contact"]
 export default function Navbar({}) {
   return (
-    <nav className="flex justify-between items-center py-3 px-5 sticky top-0 z-2">
-      <div>
+    <nav className="flex justify-between items-center w-[100%] py-3 px-5 fixed top-0 z-2">
+      <div style={{ flexShrink: 0 }}>
         <Image
           src="https://images.vexels.com/media/users/3/321843/isolated/preview/842d2927d935f3a487e612b126ac1893-drawing-of-a-glass-of-wine.png"
           alt="My Winery Logo"

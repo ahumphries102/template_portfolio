@@ -1,11 +1,13 @@
 import Image from "next/image"
 export default function Header({ image }) {
   return (
-    <header className="relative w-full h-screen overflow-hidden">
+    <header className="relative">
       <Image
         src={image}
         alt="Hero Image"
-        fill
+        layout="responsive"
+        width={1}
+        height={1}
         quality={100}
       />
     </header>

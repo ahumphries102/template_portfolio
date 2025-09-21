@@ -14,11 +14,11 @@ export default function Page({}) {
     },
   }
   return (
-    <div>
+    <div className="bg-[url('https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-black/50 bg-blend-multiply">
       <Navbar />
       <Body
         BodyContent={<BodyContent content={bodyInformation.story} />}
-        Hero={<Header image={bodyInformation.heroImage} />}
+        Hero={<Header/>}
       />
       <Footer />
       <></>

@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Libre_Bodoni } from "next/font/google"
 import "./globals.css"
-
+import Footer from "@/app/components/Footer"
+import Navigation from "@/app/components/Navbar"
 const newsReader = Libre_Bodoni({
   variable: "--font-news-reader",
   subsets: ["latin"],
@@ -20,7 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${newsReader.className} antialiased`}>{children}</body>
+      <body className={`${newsReader.className} antialiased`} >
+        <main>
+          <Navigation />
+          {children}
+          <Footer />
+        </main>
+      </body>
     </html>
   )
 }

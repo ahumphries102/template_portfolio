@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
-const routes: string[] = ["Home", "About", "Contact"]
+const routes: string[] = ["/", "About", "Contact"]
 export default function Navbar({}) {
   return (
     <nav className="flex justify-between items-center w-[100%] py-3 fixed top-0 z-2">
@@ -16,13 +16,13 @@ export default function Navbar({}) {
       <ul className="flex list-none">
         {routes.map((text) => (
           <li key={text} style={{ marginRight: "50px" }}>
-            <Link href={text === "Home" ? "/" : `/${text.toLowerCase()}`}>
-              {text}
+            <Link href={text}>
+              {text === "/" ? "Home" : text} 
             </Link>
           </li>
         ))}
       </ul>
-      <div></div> {/* spacer */}
+      <div></div>
     </nav>
   )
 }

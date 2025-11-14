@@ -1,0 +1,17 @@
+.fancy-h-scrollbar::-webkit-scrollbar {
+  height: 6px; /* 1. Sets the thickness (height) of the horizontal scrollbar */
+}
+
+.fancy-h-scrollbar::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.fancy-h-scrollbar::-webkit-scrollbar-thumb {
+  background: #7c1a53; /* 3. Styles the draggable gold handle */
+  border-radius: 10px;
+}
+
+.fancy-h-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #5e2a48; /* 4. Provides subtle hover feedback */
+}

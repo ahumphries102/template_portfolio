@@ -1,11 +1,14 @@
 import type { Metadata } from "next"
-import { Libre_Bodoni } from "next/font/google"
+import { Libre_Bodoni, Afacad } from "next/font/google"
 import "./globals.css"
 import Footer from "@/app/components/Footer"
 import Navigation from "@/app/components/Navbar"
-const newsReader = Libre_Bodoni({
-  variable: "--font-news-reader",
-  subsets: ["latin"],
+
+const headerFont = Libre_Bodoni({
+  weight: ["400", "600", "700"],
+})
+
+const bodyFont = Afacad({
   weight: ["400", "600", "700"],
 })
 
@@ -21,12 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${newsReader.className} antialiased`} >
-        <main>
-          <Navigation />
+      <body>
+        <Navigation />
+        <main className="bg-[url('https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-fixed bg-cover bg-center bg-black/70 bg-blend-multiply px-20 pt-[100px]">
           {children}
-          <Footer />
         </main>
+        <Footer />
       </body>
     </html>
   )

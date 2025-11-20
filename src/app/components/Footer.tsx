@@ -12,7 +12,7 @@ export default function Footer() {
     <div>
 
       {/* The Footer Component */}
-      <footer className="bg-gray-900 text-white p-8 sm:p-12 mt-auto">
+      <footer className="bg-gray-900 p-8 sm:p-12 mt-auto">
         <div className="container mx-auto px-4">
           {/* Footer Content Grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left">

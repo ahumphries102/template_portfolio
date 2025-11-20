@@ -4,7 +4,7 @@ import Image from "next/image"
 const routes: string[] = ["/", "About", "Contact"]
 export default function Navbar({}) {
   return (
-    <nav className="flex justify-between items-center w-[100%] py-3 fixed top-0 z-2">
+    <nav className="flex justify-between items-center h-[75px] w-[100%] py-3 fixed z-2">
       <div style={{ flexShrink: 0 }}>
         <Image
           src="https://images.vexels.com/media/users/3/321843/isolated/preview/842d2927d935f3a487e612b126ac1893-drawing-of-a-glass-of-wine.png"
@@ -13,11 +13,11 @@ export default function Navbar({}) {
           height="50"
         />
       </div>
-      <ul className="flex list-none">
+      <ul className="flex list-none text-white">
         {routes.map((text) => (
           <li key={text} style={{ marginRight: "50px" }}>
-            <Link href={text}>
-              {text === "/" ? "Home" : text} 
+            <Link href={text.toLocaleLowerCase()}>
+              <h6>{text === "/" ? "Home" : text}</h6>
             </Link>
           </li>
         ))}

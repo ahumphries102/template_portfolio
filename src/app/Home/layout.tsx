@@ -1,7 +1,7 @@
 import Image from "next/image"
 import "@/app/styles/styling.css"
 import Link from "next/link"
-import Header from "@/app/Home/header"
+import Header from "@/app/home/header"
 export default function BodyContent({ content }) {
   const bodyInformation = {
     heroImage:

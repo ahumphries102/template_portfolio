@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Libre_Bodoni } from "next/font/google"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css"
 
 const newsReader = Libre_Bodoni({

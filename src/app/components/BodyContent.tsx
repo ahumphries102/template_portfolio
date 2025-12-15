@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image"
+import { Carousel } from "react-bootstrap";
 export default function BodyContent({ content }) {
   const instagramImages = [
     "https://plus.unsplash.com/premium_photo-1681841594224-ad729a249113?q=80&w=754&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -18,19 +20,13 @@ export default function BodyContent({ content }) {
           <div className="relative left-20 z-2 w-[30%] top-8">
             <h1 className="text-7xl font-bold">Instagram</h1>
           </div>
-          <a
-            href="https://www.instagram.com/"
-            className="flex flex-row-reverse gap-5 px-5"
-          >
+          <Carousel slide>
             {instagramImages.map((image, index) => (
-              <div
-                key={index}
-                className="h-[700px] w-[30%] relative columns-30"
-              >
-                <Image src={image} fill alt="Wine Image" />
-              </div>
+              <Carousel.Item key={index} className="relative h-[500px] w-full">
+                <Image src={image} fill className="object-cover" alt="Wine Image" />
+              </Carousel.Item>
             ))}
-          </a>
+          </Carousel>
           <section className="p-20">
             <p className="text-7xl text-center">Schedule a tour or tasting</p>
           </section>

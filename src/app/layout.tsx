@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Libre_Bodoni } from "next/font/google"
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css"
 
 const newsReader = Libre_Bodoni({
@@ -20,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body className={`${newsReader.className} antialiased`}>{children}</body>
     </html>
   )

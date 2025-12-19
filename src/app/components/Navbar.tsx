@@ -1,28 +1,19 @@
 import Link from "next/link"
-import Image from "next/image"
-
 const routes: string[] = ["Home", "About", "Contact"]
 export default function Navbar({}) {
   return (
-    <nav className="flex justify-between items-center w-[100%] py-3 fixed top-0 z-2">
-      <div style={{ flexShrink: 0 }}>
-        <Image
-          src="https://images.vexels.com/media/users/3/321843/isolated/preview/842d2927d935f3a487e612b126ac1893-drawing-of-a-glass-of-wine.png"
-          alt="My Winery Logo"
-          width="50"
-          height="50"
-        />
+    <nav className="menu bg-success-content min-h-full w-[5%]">
+      <div className=" relative top-20">
+        <ul>
+          {routes.map((text) => (
+            <li key={text}>
+              <Link href={text === "Home" ? "/" : `/${text.toLowerCase()}`} className="p-1 mt-1 text-white">
+                {text}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="flex list-none">
-        {routes.map((text) => (
-          <li key={text} style={{ marginRight: "50px" }}>
-            <Link href={text === "Home" ? "/" : `/${text.toLowerCase()}`}>
-              {text}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div></div> {/* spacer */}
     </nav>
   )
 }

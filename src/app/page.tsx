@@ -3,6 +3,8 @@ import BodyContent from "@/app/components/BodyContent"
 import Footer from "@/app/components/Footer"
 import Header from "@/app/components/Header"
 import Navbar from "@/app/components/Navbar"
+import Image from "next/image"
+import logo from "@/app/images/logo.png"
 export default function Page({}) {
   const bodyInformation = {
     heroImage:
@@ -14,14 +16,29 @@ export default function Page({}) {
     },
   }
   return (
-    <div>
-      <Navbar />
+    <>
+      <div className="drawer">
+        <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
+        <div className="fixed top-4 left-4 z-[11]">
+          <label className="drawer-button" htmlFor="my-drawer-1">
+            <Image src={logo} alt="My Winery Logo" width="25" height="25" />
+          </label>
+        </div>
+        <div className="drawer-side">
+          <label
+            htmlFor="my-drawer-1"
+            aria-label="close sidebar"
+            className="drawer-overlay"
+          />
+          <Navbar />
+        </div>
+      </div>
       <Body
         BodyContent={<BodyContent content={bodyInformation.story} />}
         Hero={<Header />}
       />
       <Footer />
       <></>
-    </div>
+    </>
   )
 }

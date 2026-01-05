@@ -1,9 +1,15 @@
 import type { Metadata } from "next"
-import { Libre_Bodoni } from "next/font/google"
+import { Libre_Bodoni, Nunito_Sans } from "next/font/google"
 import "./globals.css"
 
 const newsReader = Libre_Bodoni({
-  variable: "--font-news-reader",
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+})
+
+const newsReader2 = Nunito_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 })
@@ -19,8 +25,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" data-theme="light">
-      <body className={`${newsReader.className} antialiased`}>{children}</body>
+    <html lang="en" data-theme="light" className={`${newsReader.variable} ${newsReader2.variable}`}>
+      <body className="font-body antialiased">
+        {children}
+      </body>
     </html>
   )
 }

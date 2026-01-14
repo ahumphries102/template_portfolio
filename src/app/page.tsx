@@ -1,10 +1,13 @@
 import Body from "@/app/components/Body"
-import BodyContent from "@/app/components/BodyContent"
+import History from "@/app/components/history"
+import WineCards from "@/app/components/wineCards"
+import WineTasting from "@/app/components/wineTasting"
 import Footer from "@/app/components/Footer"
 import Header from "@/app/components/Header"
 import Navbar from "@/app/components/Navbar"
 import Image from "next/image"
 import logo from "@/app/images/logo.png"
+
 export default function Page({}) {
   const bodyInformation = {
     heroImage:
@@ -34,8 +37,16 @@ export default function Page({}) {
         </div>
       </div>
       <Body
-        BodyContent={<BodyContent content={bodyInformation.story} />}
         Hero={<Header />}
+        History={
+          <History
+            content={
+              "Grape & Stone is a family-owned estate dedicated to producing small-batch, handcrafted wines. Our vineyards are cultivated with sustainable practices, ensuring every bottle captures the unique character of our terroir. From the delicate notes of our Pinot Noir to the crisp finish of our Chardonnay, each wine tells a story of tradition, care, and the rich Oregon soil. Founded on a passion for the land and the art of winemaking."
+            }
+          />
+        }
+        WineCards={<WineCards />}
+        WineTasting={<WineTasting />}
       />
       <Footer />
     </>

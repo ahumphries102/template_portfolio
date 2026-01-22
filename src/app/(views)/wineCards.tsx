@@ -22,7 +22,7 @@ export default function BodyContent() {
 
   return (
     <>
-      <section className="relative bg-white p-5 flex gap-6">
+      <section className="relative bg-white flex gap-6 h-screen p-5">
         {wines.map((wine, index) => {
           return (
             <div

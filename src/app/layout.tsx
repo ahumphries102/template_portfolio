@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Libre_Bodoni, Nunito_Sans } from "next/font/google"
 import "./globals.css"
+import Footer from "@/app/(views)/footer"
+import DrawerWrapper from "@/app/components/drawer" // The client component we made
 
 const newsReader = Libre_Bodoni({
   variable: "--font-heading",
@@ -25,9 +27,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" data-theme="light" className={`${newsReader.variable} ${newsReader2.variable}`}>
+    <html
+      lang="en"
+      data-theme="light"
+      className={`${newsReader.variable} ${newsReader2.variable}`}
+    >
       <body className="font-body antialiased">
+        <DrawerWrapper />
         {children}
+        <Footer />
       </body>
     </html>
   )
